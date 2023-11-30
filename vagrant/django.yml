@@ -6,6 +6,15 @@
   args:
     chdir: /home/decide/decide/decide
 
+- name: Change permissions on decide (Make static directory tree readable)
+  become: yes
+  file:
+    path: /home/decide
+    owner: "decide"
+    recurse: yes
+    group: decide
+    mode: "555"
+    
 - name: Database migration
   become: yes
   become_user: decide

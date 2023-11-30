@@ -1,5 +1,15 @@
 DEBUG = True
 
+....
+STATIC_ROOT = '/home/decide/static/'
+MEDIA_ROOT = '/home/decide/static/media/'
+ALLOWED_HOSTS = ['*']
+ALLOWED_ORIGINS = ['http://*', 'https://*', 'https://localhost:8080', 'http://localhost:8080']
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'Strict'
+CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
+....
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
